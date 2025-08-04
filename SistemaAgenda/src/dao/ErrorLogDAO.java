@@ -8,6 +8,6 @@ package dao;
  *
  * @author Natalie Ulate Rojas
  */
-public class ErrorLog {
+public class ErrorLogDAO {
     
 }
