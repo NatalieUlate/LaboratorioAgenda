@@ -18,7 +18,7 @@ public class ConexionBD {
     // Es importante mantener estos datos aquí para poder cambiarlos fácilmente.
     private static final String URL = "jdbc:postgresql://localhost:5432/agenda";
     private static final String USER = "postgres";
-    private static final String PASSWORD = "mitnick55";
+    private static final String PASSWORD = "admin";
     /*
       Establece y devuelve una conexión con la base de datos.
       Este es el método estándar que usarán todas las clases DAO.

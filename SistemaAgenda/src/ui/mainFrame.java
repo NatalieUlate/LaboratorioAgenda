@@ -4,19 +4,61 @@
  */
 package ui;
 
+import controller.ContactosController;
+import controller.EventosController;
+
+import javax.swing.table.DefaultTableModel;
+import model.Group;
+
 /**
  *
  * @author Natalie Ulate Rojas
  */
 public class mainFrame extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(mainFrame.class.getName());
 
-    /**
-     * Creates new form mainFrame
-     */
+    private ContactosController contactosController;
+    private EventosController eventosController;
+    private DefaultTableModel modeloTablaContactos = new DefaultTableModel();
+    private DefaultTableModel modeloTablaEventos = new DefaultTableModel();
+
+    private void cargarColumnasTablaContactos() {
+        String[] nombreColumnas = new String[]{"ID", "Nombre", "Apellido", "Teléfono", "Email", "Grupo"};
+        this.modeloTablaContactos.setColumnIdentifiers(nombreColumnas);
+        this.tblTablaContactos.setModel(this.modeloTablaContactos);
+    }
+
+    private void cargarColumnasTablaEventos() {
+        String[] nombreColumnas = new String[]{"Fecha", "Hora", "Descripción", "Ubicación", "Contacto"};
+        modeloTablaEventos.setColumnIdentifiers(nombreColumnas);
+        this.tblTablaEventos.setModel(modeloTablaEventos);
+    }
+
     public mainFrame() {
         initComponents();
+        
+        
+        cargarColumnasTablaContactos();
+        this.txtId.setVisible(false);
+        contactosController = new ContactosController(
+                this.tblTablaContactos,
+                this.txtId,
+                this.txtNombre,
+                this.txtApellido,
+                this.txtTelefono,
+                this.txtEmail,
+                this.cbmGrupo,
+                this.btnNuevo,
+                this.btnGuardar,
+                this.btnEliminar
+        );
+
+        contactosController.initController();
+        cargarColumnasTablaEventos(); 
+        eventosController = new EventosController(this.tblTablaEventos);
+        eventosController.initController();
+        
     }
 
     /**
@@ -172,7 +214,6 @@ public class mainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEliminar;
