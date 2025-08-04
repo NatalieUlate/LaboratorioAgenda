@@ -28,47 +28,176 @@ public class mainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tbpTabbedPane = new javax.swing.JTabbedPane();
+        pnlPanelContactos = new javax.swing.JPanel();
+        pnlPanelFormulario = new javax.swing.JPanel();
+        lblNombre = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        lblApellido = new javax.swing.JLabel();
+        txtApellido = new javax.swing.JTextField();
+        lblTelefono = new javax.swing.JLabel();
+        txtTelefono = new javax.swing.JTextField();
+        lblEmail = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        lblGrupo = new javax.swing.JLabel();
+        cbmGrupo = new javax.swing.JComboBox<>();
+        txtId = new javax.swing.JTextField();
+        pnlPanelTabla = new javax.swing.JPanel();
+        scpscrollPaneTablaContactos = new javax.swing.JScrollPane();
+        tblTablaContactos = new javax.swing.JTable();
+        pnlPanelBotones = new javax.swing.JPanel();
+        btnNuevo = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        pnlPanelEventos = new javax.swing.JPanel();
+        scpScrollPaneTablaEventos = new javax.swing.JScrollPane();
+        tblTablaEventos = new javax.swing.JTable();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Mi Agenda Personal");
+        setPreferredSize(new java.awt.Dimension(800, 600));
+
+        pnlPanelContactos.setLayout(new java.awt.BorderLayout());
+
+        pnlPanelFormulario.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos del Contacto "));
+        pnlPanelFormulario.setLayout(new java.awt.GridLayout(0, 2));
+
+        lblNombre.setText("Nombre:");
+        pnlPanelFormulario.add(lblNombre);
+        pnlPanelFormulario.add(txtNombre);
+
+        lblApellido.setText("Apellido:");
+        pnlPanelFormulario.add(lblApellido);
+        pnlPanelFormulario.add(txtApellido);
+
+        lblTelefono.setText("Telefono:");
+        pnlPanelFormulario.add(lblTelefono);
+        pnlPanelFormulario.add(txtTelefono);
+
+        lblEmail.setText("Email:");
+        pnlPanelFormulario.add(lblEmail);
+        pnlPanelFormulario.add(txtEmail);
+
+        lblGrupo.setText("Grupo:");
+        pnlPanelFormulario.add(lblGrupo);
+
+        pnlPanelFormulario.add(cbmGrupo);
+        pnlPanelFormulario.add(txtId);
+
+        pnlPanelContactos.add(pnlPanelFormulario, java.awt.BorderLayout.PAGE_START);
+
+        tblTablaContactos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        scpscrollPaneTablaContactos.setViewportView(tblTablaContactos);
+
+        javax.swing.GroupLayout pnlPanelTablaLayout = new javax.swing.GroupLayout(pnlPanelTabla);
+        pnlPanelTabla.setLayout(pnlPanelTablaLayout);
+        pnlPanelTablaLayout.setHorizontalGroup(
+            pnlPanelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 788, Short.MAX_VALUE)
+            .addGroup(pnlPanelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(scpscrollPaneTablaContactos, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE))
+        );
+        pnlPanelTablaLayout.setVerticalGroup(
+            pnlPanelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 365, Short.MAX_VALUE)
+            .addGroup(pnlPanelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPanelTablaLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(scpscrollPaneTablaContactos, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
+        pnlPanelContactos.add(pnlPanelTabla, java.awt.BorderLayout.CENTER);
+
+        btnNuevo.setText("Nuevo");
+        pnlPanelBotones.add(btnNuevo);
+
+        btnGuardar.setText("Guardar");
+        pnlPanelBotones.add(btnGuardar);
+
+        btnEliminar.setText("Eliminar");
+        pnlPanelBotones.add(btnEliminar);
+
+        pnlPanelContactos.add(pnlPanelBotones, java.awt.BorderLayout.PAGE_END);
+
+        tbpTabbedPane.addTab("Gestión de Contactos", pnlPanelContactos);
+
+        pnlPanelEventos.setBorder(javax.swing.BorderFactory.createTitledBorder("Próximos Eventos"));
+        pnlPanelEventos.setLayout(new java.awt.BorderLayout());
+
+        tblTablaEventos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        scpScrollPaneTablaEventos.setViewportView(tblTablaEventos);
+
+        pnlPanelEventos.add(scpScrollPaneTablaEventos, java.awt.BorderLayout.CENTER);
+
+        tbpTabbedPane.addTab("Agenda de Eventos", pnlPanelEventos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 495, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tbpTabbedPane)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tbpTabbedPane)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new mainFrame().setVisible(true));
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnNuevo;
+    private javax.swing.JComboBox<Group> cbmGrupo;
+    private javax.swing.JLabel lblApellido;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblGrupo;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblTelefono;
+    private javax.swing.JPanel pnlPanelBotones;
+    private javax.swing.JPanel pnlPanelContactos;
+    private javax.swing.JPanel pnlPanelEventos;
+    private javax.swing.JPanel pnlPanelFormulario;
+    private javax.swing.JPanel pnlPanelTabla;
+    private javax.swing.JScrollPane scpScrollPaneTablaEventos;
+    private javax.swing.JScrollPane scpscrollPaneTablaContactos;
+    private javax.swing.JTable tblTablaContactos;
+    private javax.swing.JTable tblTablaEventos;
+    private javax.swing.JTabbedPane tbpTabbedPane;
+    private javax.swing.JTextField txtApellido;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
